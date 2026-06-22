@@ -16,9 +16,9 @@ This repository contains the full code and results for our multimodal pain recog
 ### Architecture
 
 <p align="center">
-  <img src="assets/architecture.png" alt="Hierarchical Multimodal Fusion Architecture" width="700"/>
+  <img src="assets/architecture.jpg" alt="Hierarchical Multimodal Fusion Architecture" width="700"/>
   <br>
-  <em>Fig. 1 — Overview of the Hierarchical Multimodal Fusion Architecture. Each modality is processed by a specialised feature extractor. The resulting 256-d features feed three parallel prediction streams (unimodal, pairwise, full cross-modal attention), whose seven logits are combined via a learnable ensemble.</em>
+  <em>Fig. 1 - Overview of the Hierarchical Multimodal Fusion Architecture. Each modality is processed by a specialised feature extractor. The resulting 256-d features feed three parallel prediction streams (unimodal, pairwise, full cross-modal attention), whose seven logits are combined via a learnable ensemble.</em>
 </p>
 
 ---
@@ -45,20 +45,20 @@ This repository contains the full code and results for our multimodal pain recog
 | Macro Avg  | 75.0%     | 50.0%  | 34.0%    | 600     |
 | Weighted Avg | 75.0%   | 50.0%  | 34.0%    | 600     |
 
-The model learns a conservative, high-specificity decision boundary: it achieves **100% precision for High Pain** (zero false alarms) and **100% recall for Low Pain** (no low-pain case missed) — behaviours that are clinically desirable when false alarms are costly.
+The model learns a conservative, high-specificity decision boundary: it achieves **100% precision for High Pain** (zero false alarms) and **100% recall for Low Pain** (no low-pain case missed) - behaviours that are clinically desirable when false alarms are costly.
 
 ### Training Curves & Evaluation Metrics
 
 <p align="center">
   <img src="assets/training_curves.png" alt="Training and Validation Curves" width="700"/>
   <br>
-  <em>Fig. 2 — Training and validation loss (left) and validation accuracy (right) across all three training phases. The model converges steadily, reaching a peak validation accuracy of 50.83%.</em>
+  <em>Fig. 2 - Training and validation loss (left) and validation accuracy (right) across all three training phases. The model converges steadily, reaching a peak validation accuracy of 50.83%.</em>
 </p>
 
 <p align="center">
   <img src="assets/evaluation_metrics.png" alt="ROC and PR Curves" width="700"/>
   <br>
-  <em>Fig. 3 — ROC Curve (AUC = 0.533, left) and Precision-Recall Curve (AP = 0.563, right) on the held-out test set.</em>
+  <em>Fig. 3 - ROC Curve (AUC = 0.533, left) and Precision-Recall Curve (AP = 0.563, right) on the held-out test set.</em>
 </p>
 
 ---
@@ -84,7 +84,7 @@ Comprehensive ablations (Table II of the paper) validate each design choice.
 **Key findings:**
 - **Physio + Audio** is the strongest bimodal combination (51.83% acc, 45.18% weighted F1), suggesting a powerful synergy between physiological signals and vocal expression.
 - **Cross-Entropy Only** causes the model to completely fail on High Pain (0% recall), confirming that Focal Loss is essential for handling class imbalance.
-- Video streams do not contribute positively in the current architecture — an important target for future work.
+- Video streams do not contribute positively in the current architecture - an important target for future work.
 
 ---
 
@@ -110,8 +110,7 @@ xite-pain-recognition/
 ├── scripts/
 │   └── run_ablation.py        # Reproduces Table II ablation study
 │
-├── assets/                    # Paper figures (architecture, curves, metrics)
-└── results/                   # Generated checkpoints & plots (git-ignored)
+├── assets/                    # Paper & Paper figures (architecture, curves, metrics)
 ```
 
 ---
@@ -120,8 +119,8 @@ xite-pain-recognition/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/xite-pain-recognition.git
-cd xite-pain-recognition
+git clone https://github.com/Satyajithchary/Hierarchical-Multimodal-Fusion-with-Phased-Training-for-X-ITE-Challenge.git
+cd Hierarchical-Multimodal-Fusion-with-Phased-Training-for-X-ITE-Challenge
 
 # 2. Create and activate a virtual environment
 python -m venv venv
